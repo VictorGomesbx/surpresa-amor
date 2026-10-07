@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: radial-gradient(circle, #25000f, #090005, #000);
+    font-family: Arial, sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+    padding: 30px;
+    color: white;
+}
+
+.coracao {
+    font-size: 90px;
+    animation: bater 1s infinite;
+    filter: drop-shadow(0 0 20px #ff1744);
+}
+
+h1 {
+    margin-top: 20px;
+    font-size: 32px;
+    text-shadow: 0 0 15px #ff4d8d;
+}
+
+#mensagem {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #ffb3ca;
+    min-height: 30px;
+}
+
+button {
+    margin-top: 30px;
+    padding: 14px 30px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: #ff2d75;
+    color: white;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 0 20px #ff2d75;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 35px #ff2d75;
+}
+
+@keyframes bater {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+}
+
+.coracao-flutuante {
+    position: absolute;
+    bottom: -50px;
+
+    pointer-events: none;
+
+    animation: subir linear forwards;
+
+    filter: drop-shadow(0 0 8px #ff2d75);
+
+    z-index: -1;
+}
+
+@keyframes subir {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+#surpresa {
+    display: block;
+    margin: 15px auto 0;
+}
+
+/* ===== CELULAR ===== */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 100%;
+        padding: 25px 20px;
+    }
+
+    .coracao {
+        font-size: 70px;
+    }
+
+    h1 {
+        font-size: 25px;
+        line-height: 1.3;
+    }
+
+    #mensagem {
+        font-size: 17px;
+        line-height: 1.6;
+        max-width: 360px;
+        margin: 20px auto 0;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 13px 24px;
+        max-width: 90%;
+    }
+}
